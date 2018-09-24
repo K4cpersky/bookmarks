@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   
   def index
-    @books = Book.all
+    @books = Book.all.order(rank_this_week: :asc).limit(10)
   end
   
   def show
